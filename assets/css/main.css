@@ -1,15 +1,3 @@
-/**
-* Template Name: FolioOne
-* Template URL: https://bootstrapmade.com/folioone-bootstrap-project-website-template/
-* Updated: Aug 23 2025 with Bootstrap v5.3.7
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
-/*--------------------------------------------------------------
-# Font & Color Variables
-# Help: https://bootstrapmade.com/color-system/
---------------------------------------------------------------*/
 /* Fonts */
 :root {
   --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -2240,6 +2228,7 @@ section,
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   margin-bottom: 30px;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .project .project-card:hover {
@@ -2943,4 +2932,90 @@ section,
 /* Accessibility: honor reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .email-pop a { animation: none !important; }
+}
+
+/* Fix mobile fullscreen modal blocking background click */
+@media (max-width: 575.98px) {
+  .modal-fullscreen-sm-down .modal-content {
+    height: auto !important;
+  }
+}
+
+.jam--fiverr {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -.125em;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-2.5 -2 24 24'%3E%3Cg fill='%23000'%3E%3Cpath d='M16.25 16.25v-10h-10v-.625c0-1.034.841-1.875 1.875-1.875H10V0H8.125A5.63 5.63 0 0 0 2.5 5.625v.625H0V10h2.5v6.25H0V20h8.75v-3.75h-2.5V10h6.285v6.25H10V20h8.75v-3.75z'/%3E%3Ccircle cx='14.375' cy='1.875' r='1.875'/%3E%3C/g%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.fa7-brands--square-upwork {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -.125em;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-32 0 512 512'%3E%3Cpath fill='%23000' d='M56 32h336c30.9 0 56 25.1 56 56v336c0 30.9-25.1 56-56 56H56c-30.9 0-56-25.1-56-56V88c0-30.9 25.1-56 56-56m214.9 242.2c6.6-52.9 25.9-69.5 51.4-69.5c25.3 0 44.9 20.2 44.9 49.7s-19.7 49.7-44.9 49.7c-27.9 0-46.3-21.5-51.4-29.9m-26.7-41.8c-8.2-15.5-14.3-36.3-19.2-55.6h-62.9v78.1c0 28.4-12.9 49.4-38.2 49.4S84.1 283.4 84.1 255l.3-78.1H48.2V255c0 22.8 7.4 43.5 20.9 58.2c13.9 15.2 32.8 23.2 54.8 23.2c43.7 0 74.2-33.5 74.2-81.5v-52.5c4.6 17.3 15.4 50.5 36.2 79.7L215 392.6h36.8l12.8-78.4c4.2 3.5 8.7 6.6 13.4 9.4c12.3 7.8 26.4 12.2 40.9 12.6h3.4c45.1 0 80.9-34.9 80.9-81.9s-35.9-82.2-80.9-82.2c-45.4 0-70.9 29.7-78.1 60.1z'/%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.whatsapp-fab {
+  position: fixed;
+  right: 15px;
+  bottom: 75px; /* above #scroll-top (which sits at ~15px) */
+  z-index: 100001; /* higher than scroll-top (99999) */
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,.2);
+  transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+}
+
+
+.whatsapp-fab i { font-size: 28px; line-height: 0; }
+
+/* Optional gentle pulse to draw attention */
+@keyframes wa-pulse {
+  0%,100% { transform: translateY(0) scale(1); }
+  50%     { transform: translateY(0) scale(1.1); }
+}
+.whatsapp-fab { animation: wa-pulse 3.2s ease-in-out infinite; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-fab { animation: none; }
+}
+
+/* Keep icon exactly the same on hover/focus/active */
+.whatsapp-fab:hover,
+.whatsapp-fab:focus,
+.whatsapp-fab:active {
+  transform: none !important;
+  box-shadow: 0 10px 25px rgba(0,0,0,.2) !important;
+  background: #25D366 !important;
+  color: #fff !important;
+}
+
+/* Respect reduced motion (stop pulsing cleanly) */
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-fab {
+    animation: none !important;
+  }
 }
