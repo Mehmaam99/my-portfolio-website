@@ -4,7 +4,7 @@
         window.location.hostname === '127.0.0.1' ||
         window.location.protocol === 'file:';
     const API_URL = isLocal
-        ? "https://mehmaaaaaaaam-portfolio-chatbot.hf.space/api/chat"
+        ? "http://localhost:8000/api/chat"
         : "https://mehmaaaaaaaam-portfolio-chatbot.hf.space/api/chat";
     const THEME_COLOR = "#1387c1";
 
