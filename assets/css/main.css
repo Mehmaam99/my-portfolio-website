@@ -1,28 +1,40 @@
 /* Fonts */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Raleway",  sans-serif;
-  --nav-font: "Poppins",  sans-serif;
+  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Raleway", sans-serif;
+  --nav-font: "Poppins", sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
-  --background-color: #101a20; /* Background color for the entire website, including individual sections */
-  --default-color: #e7f2f7; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #ffffff; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #1387c1; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #141f26; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+:root {
+  --background-color: #101a20;
+  /* Background color for the entire website, including individual sections */
+  --default-color: #e7f2f7;
+  /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #ffffff;
+  /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #1387c1;
+  /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: #141f26;
+  /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: #ffffff;
+  /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #ffffff;  /* The default color of the main navmenu links */
-  --nav-hover-color: #1387c1; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #213642; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #051117; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #e7f2f7; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #1387c1; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-color: #ffffff;
+  /* The default color of the main navmenu links */
+  --nav-hover-color: #1387c1;
+  /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: #213642;
+  /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #051117;
+  /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #e7f2f7;
+  /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #1387c1;
+  /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -578,7 +590,7 @@ h6 {
 .scroll-top.active {
   visibility: visible;
   opacity: 1;
-  bottom: 15px;
+  bottom: 100px;
 }
 
 /*--------------------------------------------------------------
@@ -2860,15 +2872,15 @@ section,
 .project .project-card .cta-buttons .btn-view-project:hover {
   background-color: color-mix(in srgb, var(--accent-color), black 15%);
   transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Base: desktop */
-.project .project-card .cta-buttons .btn-view-project{
+.project .project-card .cta-buttons .btn-view-project {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  align-items:stretch;
+  align-items: stretch;
   justify-content: center;
   margin-top: 12px;
 }
@@ -2887,6 +2899,7 @@ section,
     align-items: stretch;
     gap: 0.75rem;
   }
+
   .project .project-card .cta-buttons a {
     width: 100%;
     text-align: right;
@@ -2894,10 +2907,18 @@ section,
 }
 
 /* Ensure modals aren't clipped by sections */
-.modal { z-index: 2000; }
-.modal-backdrop { z-index: 1990; }
+.modal {
+  z-index: 2000;
+}
+
+.modal-backdrop {
+  z-index: 1990;
+}
+
 /* If still clipped, force sections to allow overflow while modal is open */
-.modal-open .section { overflow: visible !important; }
+.modal-open .section {
+  overflow: visible !important;
+}
 
 /* Underlined + animated email */
 .email-pop a {
@@ -2916,12 +2937,27 @@ section,
    Swap the animation line above with this to use fade:
    animation: email-pop-fade 2.6s ease-in-out infinite; */
 @keyframes email-pop-zoom {
-  0%, 100% { transform: scale(1); }
-  50%      { transform: scale(1.06); }
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.06);
+  }
 }
+
 @keyframes email-pop-fade {
-  0%, 100% { opacity: 1; }
-  50%      { opacity: .85; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .85;
+  }
 }
 
 /* Hover: gentle emphasis */
@@ -2931,7 +2967,9 @@ section,
 
 /* Accessibility: honor reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .email-pop a { animation: none !important; }
+  .email-pop a {
+    animation: none !important;
+  }
 }
 
 /* Fix mobile fullscreen modal blocking background click */
@@ -2974,8 +3012,10 @@ section,
 .whatsapp-fab {
   position: fixed;
   right: 15px;
-  bottom: 75px; /* above #scroll-top (which sits at ~15px) */
-  z-index: 100001; /* higher than scroll-top (99999) */
+  bottom: 75px;
+  /* above #scroll-top (which sits at ~15px) */
+  z-index: 100001;
+  /* higher than scroll-top (99999) */
   width: 46px;
   height: 46px;
   border-radius: 50%;
@@ -2984,23 +3024,38 @@ section,
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, .2);
   transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
 }
 
 
-.whatsapp-fab i { font-size: 28px; line-height: 0; }
+.whatsapp-fab i {
+  font-size: 28px;
+  line-height: 0;
+}
 
 /* Optional gentle pulse to draw attention */
 @keyframes wa-pulse {
-  0%,100% { transform: translateY(0) scale(1); }
-  50%     { transform: translateY(0) scale(1.1); }
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(0) scale(1.1);
+  }
 }
-.whatsapp-fab { animation: wa-pulse 3.2s ease-in-out infinite; }
+
+.whatsapp-fab {
+  animation: wa-pulse 3.2s ease-in-out infinite;
+}
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .whatsapp-fab { animation: none; }
+  .whatsapp-fab {
+    animation: none;
+  }
 }
 
 /* Keep icon exactly the same on hover/focus/active */
@@ -3008,7 +3063,7 @@ section,
 .whatsapp-fab:focus,
 .whatsapp-fab:active {
   transform: none !important;
-  box-shadow: 0 10px 25px rgba(0,0,0,.2) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, .2) !important;
   background: #25D366 !important;
   color: #fff !important;
 }
