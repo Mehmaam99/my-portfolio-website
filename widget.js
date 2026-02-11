@@ -297,7 +297,7 @@
             <span id="orbit-close-btn" style="cursor:pointer; font-size: 24px;">×</span>
         </div>
         <div class="orbit-chat-messages" id="orbit-messages">
-            <div class="orbit-message bot">Hello! I am **Syed Muhammad Mehmam's** AI Portfolio Assistant. How can I help you explore his work and skills today?</div>
+            <div class="orbit-message bot">Hello! I am <strong>Syed Muhammad Mehmam's</strong> AI Portfolio Assistant. How can I help you explore his work and skills today?</div>
         </div>
         <div class="orbit-chat-input-area">
             <input class="orbit-chat-input" id="orbit-input" placeholder="Type your message..." />
@@ -336,7 +336,11 @@
 
         if (sender === 'bot') {
             if (typeof marked !== 'undefined') {
-                div.innerHTML = marked.parse(text);
+                const rawHtml = marked.parse(text);
+                // Security: Sanitize HTML to prevent XSS
+                div.innerHTML = typeof DOMPurify !== 'undefined'
+                    ? DOMPurify.sanitize(rawHtml)
+                    : rawHtml;
             } else {
                 div.textContent = text;
             }
@@ -366,14 +370,25 @@
         if (typing) typing.remove();
     }
 
+    // ANTI-SPAM: Cooldown logic
+    let isCooldown = false;
+
     async function sendMessage() {
+        if (isCooldown) return;
         const text = inputEl.value.trim();
         if (!text) return;
+
+        // Security: Limit input length on frontend
+        if (text.length > 500) {
+            alert("Message is too long. Please shorten it.");
+            return;
+        }
 
         addMessage(text, 'user');
         inputEl.value = '';
         inputEl.disabled = true;
         sendBtn.disabled = true;
+        isCooldown = true;
 
         showTyping();
 
@@ -385,15 +400,20 @@
             });
 
             removeTyping();
+            if (!res.ok) throw new Error();
+
             const data = await res.json();
-            addMessage(data.response || "Something went wrong.", 'bot');
+            addMessage(data.response || "I apologize, but I'm having trouble retrieving that information.", 'bot');
         } catch {
             removeTyping();
-            addMessage("Server error. Please try again.", 'bot');
+            addMessage("The assistant is currently unavailable. Please try again later.", 'bot');
         } finally {
             inputEl.disabled = false;
             sendBtn.disabled = false;
             inputEl.focus();
+
+            // Set 2s cooldown to prevent spam
+            setTimeout(() => { isCooldown = false; }, 2000);
         }
     }
 
