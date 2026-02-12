@@ -7,48 +7,44 @@
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root {
-  --background-color: #101a20;
-  /* Background color for the entire website, including individual sections */
-  --default-color: #e7f2f7;
-  /* Default color used for the majority of the text content across the entire website */
+  --background-color: #02050a;
+  /* Deep Space Black */
+  --default-color: #e0fbfc;
+  /* Soft cyan white */
   --heading-color: #ffffff;
-  /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #1387c1;
-  /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #141f26;
-  /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff;
-  /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --accent-color: #00e5ff;
+  /* Neon Cyan */
+  --surface-color: rgba(10, 25, 41, 0.7);
+  /* Deep blue tint */
+  --contrast-color: #02050a;
+  /* Dark for contrast on bright elements */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --neon-glow: 0 0 20px rgba(0, 229, 255, 0.6);
+  --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
 
-/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+/* Nav Menu Colors */
 :root {
-  --nav-color: #ffffff;
-  /* The default color of the main navmenu links */
-  --nav-hover-color: #1387c1;
-  /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #213642;
-  /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #051117;
-  /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #e7f2f7;
-  /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #1387c1;
-  /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-color: #e0fbfc;
+  --nav-hover-color: #00e5ff;
+  --nav-mobile-background-color: rgba(2, 5, 10, 0.95);
+  --nav-dropdown-background-color: rgba(5, 15, 25, 0.95);
+  --nav-dropdown-color: #e0fbfc;
+  --nav-dropdown-hover-color: #00e5ff;
 }
 
-/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
-
+/* Color Presets */
 .light-background {
-  --background-color: #142027;
-  --surface-color: #325264;
+  --background-color: #050b14;
+  --surface-color: #0d1b2a;
 }
 
 .dark-background {
-  --background-color: #0b1419;
-  --default-color: #ffffff;
+  --background-color: #02050a;
+  --default-color: #e0fbfc;
   --heading-color: #ffffff;
-  --surface-color: #252525;
+  --surface-color: #0d1b2a;
   --contrast-color: #ffffff;
 }
 
@@ -60,10 +56,40 @@
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
+/* Updated Animated Background */
 body {
   color: var(--default-color);
   background-color: var(--background-color);
+  background-image:
+    radial-gradient(circle at 15% 50%, rgba(0, 229, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 85% 30%, rgba(120, 0, 255, 0.08) 0%, transparent 50%);
   font-family: var(--default-font);
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSIjRkZGIiBmaWxsLW9wYWNpdHk9IjAuMSI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiLz48Y2lyY2xlIGN4PSIxMDMiIGN5PSI1MCIgcj0iMC41Ii8+PGNpcmNsZSBjeD0iNjAiIGN5PSIxOTAiIHI9IjAuOCIvPjxjaXJjbGUgY3g9IjE2MCIgY3k9IjEyMCIgcj0iMSIvPjwvZz48L3N2Zz4=');
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: -1;
+  animation: starFloat 120s linear infinite;
+}
+
+@keyframes starFloat {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: -500px -500px;
+  }
 }
 
 a {
@@ -700,6 +726,11 @@ section,
   text-wrap: balance;
 }
 
+/* Contact Section Title Override */
+.contact .section-title h2 {
+  color: #ffffff;
+}
+
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
@@ -729,8 +760,9 @@ section,
   left: 0;
   width: 100%;
   height: 3px;
-  background: linear-gradient(90deg, var(--accent-color), color-mix(in srgb, var(--accent-color), transparent 50%));
+  background: linear-gradient(90deg, var(--accent-color), #00ffd5);
   border-radius: 2px;
+  box-shadow: 0 0 10px rgba(0, 163, 255, 0.5);
 }
 
 @media (max-width: 768px) {
@@ -771,34 +803,43 @@ section,
 }
 
 .hero .hero-actions .btn {
-  padding: 12px 30px;
+  padding: 12px 35px;
   border-radius: 50px;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.3s ease;
-  border: 2px solid;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero .hero-actions .btn.btn-primary {
   background: var(--accent-color);
-  color: var(--contrast-color);
-  border-color: var(--accent-color);
+  color: #000;
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.5);
 }
 
 .hero .hero-actions .btn.btn-primary:hover {
-  background: color-mix(in srgb, var(--accent-color), black 15%);
-  border-color: color-mix(in srgb, var(--accent-color), black 15%);
-  transform: translateY(-2px);
+  background: #fff;
+  color: var(--accent-color);
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.8), 0 0 50px rgba(0, 229, 255, 0.4);
+  transform: translateY(-3px);
 }
 
 .hero .hero-actions .btn.btn-outline {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.05);
   color: var(--accent-color);
   border-color: var(--accent-color);
+  backdrop-filter: blur(5px);
 }
 
 .hero .hero-actions .btn.btn-outline:hover {
-  transform: translateY(-2px);
+  background: var(--accent-color);
+  color: #000;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.6);
+  transform: translateY(-3px);
 }
 
 @media (max-width: 576px) {
@@ -1058,10 +1099,11 @@ section,
 
 .about .skill-item {
   padding: 24px;
-  border-radius: 6px;
+  border-radius: 12px;
   transition: 0.3s ease-in-out;
-  background: color-mix(in srgb, var(--surface-color), var(--accent-color) 2%);
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  background: var(--surface-color);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
   height: 100%;
 }
 
@@ -1196,10 +1238,20 @@ section,
 # Skills Section
 --------------------------------------------------------------*/
 .skills .skill-box {
-  background-color: var(--surface-color);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(10, 25, 41, 0.4) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
   padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.skills .skill-box:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-color);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 229, 255, 0.15);
 }
 
 .skills .skill-box h3 {
@@ -1541,14 +1593,18 @@ section,
 --------------------------------------------------------------*/
 .services .service-item {
   display: flex;
-  background-color: var(--surface-color);
-  border-radius: 12px;
-  padding: 2rem;
+  flex-direction: column;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(10, 25, 41, 0.4) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 2.5rem;
   height: 100%;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
-  transition: all 0.4s ease;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .services .service-item::before {
@@ -2234,18 +2290,22 @@ section,
 }
 
 .project .project-card {
-  background-color: var(--surface-color);
-  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(10, 25, 41, 0.4) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
   margin-bottom: 30px;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   cursor: pointer;
 }
 
 .project .project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(-10px) scale(1.02);
+  border-color: var(--accent-color);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 229, 255, 0.2);
 }
 
 .project .project-card:hover .project-img .project-overlay {
@@ -2756,7 +2816,7 @@ section,
 
 .contact .info-item .icon-box i {
   font-size: 1.5rem;
-  color: var(--contrast-color);
+  color: #ffffff;
 }
 
 .contact .info-item:hover .icon-box {
@@ -2849,11 +2909,156 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Starter Section Section
+# Glass & Process Styles
 --------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
+.bg-glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--default-color);
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(10, 25, 41, 0.4) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 2.5rem;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.02), 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.glass-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: var(--accent-color);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 229, 255, 0.2);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(10, 25, 41, 0.6) 100%);
+}
+
+.icon-container {
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 163, 255, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: var(--accent-color);
+  font-size: 1.75rem;
+  transition: 0.3s;
+}
+
+.glass-card:hover .icon-container {
+  background: var(--accent-color);
+  color: #fff;
+  transform: rotate(10deg);
+}
+
+.shimmer-border::after {
+  content: "";
+  position: absolute;
+  top: -150%;
+  left: -150%;
+  width: 400%;
+  height: 400%;
+  background: linear-gradient(45deg,
+      transparent 0%,
+      rgba(0, 163, 255, 0.1) 45%,
+      rgba(0, 163, 255, 0.4) 50%,
+      rgba(0, 163, 255, 0.1) 55%,
+      transparent 100%);
+  transform: rotate(-45deg);
+  transition: all 0.8s ease;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.shimmer-border:hover::after {
+  opacity: 1;
+  top: -100%;
+  left: -100%;
+}
+
+.authority-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  background: rgba(0, 163, 255, 0.2);
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  backdrop-filter: blur(5px);
+}
+
+.glass-card:hover .authority-badge {
+  background: var(--accent-color);
+  color: #fff;
+  box-shadow: var(--neon-glow);
+}
+
+/* Mobile Component Stacking */
+@media (max-width: 991.98px) {
+
+  .services .service-item,
+  .why-hire .authority-item,
+  .process .process-item {
+    margin-bottom: 1.5rem;
+  }
+}
+
+
+.process-item {
+  height: 100%;
+  position: relative;
+}
+
+.process-item .step-num {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  opacity: 0.2;
+  position: absolute;
+  top: -10px;
+  right: 15px;
+}
+
+.process-item h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.process-item p {
+  font-size: 0.95rem;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+}
+
+.process-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--neon-glow);
+}
+
 
 /* project card CTA buttons */
 
@@ -3073,4 +3278,28 @@ section,
   .whatsapp-fab {
     animation: none !important;
   }
+}
+
+/* Final Aesthetic Overhaul Fixes */
+.section-title h2::before,
+.section-title h2::after {
+  display: none !important;
+}
+
+.service-item,
+.authority-item {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+}
+
+.service-item ul,
+.authority-item p {
+  width: 100% !important;
+}
+
+.icon-container {
+  margin-right: 0 !important;
+  margin-bottom: 1.5rem !important;
 }

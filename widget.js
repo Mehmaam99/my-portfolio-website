@@ -4,9 +4,9 @@
         window.location.hostname === '127.0.0.1' ||
         window.location.protocol === 'file:';
     const API_URL = isLocal
-        ? "http://localhost:8000/api/chat"
+        ? "http://localhost:5000/api/chat"
         : "https://mehmaaaaaaaam-portfolio-chatbot.hf.space/api/chat";
-    const THEME_COLOR = "#1387c1";
+    const THEME_COLOR = "#00e5ff";
 
     // Create Styles
     const style = document.createElement('style');
@@ -38,8 +38,8 @@
             width: 65px;
             height: 65px;
             border-radius: 50%;
-            background: linear-gradient(135deg, ${THEME_COLOR}, #1aabf0);
-            box-shadow: 0 8px 32px rgba(19, 135, 193, 0.4);
+            background: linear-gradient(135deg, ${THEME_COLOR}, #00b8cc);
+            box-shadow: 0 8px 32px rgba(0, 229, 255, 0.4);
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -101,10 +101,10 @@
         .orbit-online-dot {
             width: 8px;
             height: 8px;
-            background: #10b981;
+            background: #00e5ff;
             border-radius: 50%;
             display: inline-block;
-            box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+            box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.2);
         }
 
         .orbit-chat-messages {
@@ -143,10 +143,11 @@
 
         .orbit-message.user {
             background: ${THEME_COLOR};
-            color: white;
+            color: #02050a;
             align-self: flex-end;
             border-bottom-right-radius: 4px;
-            box-shadow: 0 4px 15px rgba(19, 135, 193, 0.25);
+            box-shadow: 0 4px 15px rgba(0, 229, 255, 0.25);
+            font-weight: 500;
         }
 
         /* PREMIUM MARKDOWN STYLING */

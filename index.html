@@ -4,9 +4,11 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Home</title>
-  <meta name="description" content="This is the home page of my portfolio">
-  <meta name="keywords" content="home, portfolio, AI Engineer, Gen AI Engineer, Syed Muhammad Mehmam">
+  <meta name="description"
+    content="Syed Muhammad Mehmam - AI Engineer specializing in Large Language Models, RAG pipelines, and Generative AI solutions. Building intelligent AI agents and enterprise-grade ML systems.">
+  <meta name="keywords"
+    content="AI Engineer, Gen AI, LLM, RAG, Machine Learning, Generative AI, AI Agent Development, Data Engineering">
+  <title>Syed Muhammad Mehmam | AI Engineer</title>
 
   <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon.png">
@@ -25,6 +27,81 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <style>
+    /* Availability Badge */
+    .availability-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      padding: 8px 16px;
+      border-radius: 50px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: #22c55e;
+      font-weight: 500;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.5;
+      }
+    }
+
+    /* Stats Row */
+    .stats-row {
+      display: flex;
+      gap: 30px;
+      margin: 25px 0;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent-color);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.875rem;
+      color: var(--default-color);
+      opacity: 0.7;
+      margin-top: 5px;
+    }
+
+    @media (max-width: 768px) {
+      .stats-row {
+        gap: 20px;
+      }
+
+      .stat-number {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
@@ -84,12 +161,35 @@
         <div class="row gy-4 align-items-center">
           <div class="col-lg-6 order-2 order-lg-1">
             <div class="hero-content">
-              <h1 data-aos="fade-up" data-aos-delay="200">Hello, I'm <span class="highlight">Syed Muhammad Mehmam</span>
-              </h1>
-              <h2 data-aos="fade-up" data-aos-delay="300"><span class="typed"
-                  data-typed-items="AI Engineer, Gen AI Engineer, AI Agent Developer"></span></h2>
-              <p data-aos="fade-up" data-aos-delay="400">AI Engineer specializing in Large Language Models (LLMs), RAG
-                pipelines, and Generative AI solutions, bridging the gap between raw data and intelligent agents.</p>
+              <div class="availability-badge" data-aos="fade-down" data-aos-delay="100">
+                <span class="status-dot"></span>
+                <span class="status-text">Available for Hire - Open to Projects & Full-Time Roles</span>
+              </div>
+              <h1 data-aos="fade-up" data-aos-delay="200">Build <span class="highlight">AI Agents</span> that solve real
+                business problems.</h1>
+              <p data-aos="fade-up" data-aos-delay="400">Syed Muhammad Mehmam — AI Engineer specializing in LLMs, RAG
+                pipelines, and autonomous AI agents. I help companies automate complex workflows and unlock the value in
+                their data with production-ready AI solutions.</p>
+              <div class="primary-skills-badges mb-4" data-aos="fade-up" data-aos-delay="420">
+                <span class="badge bg-glass me-2"><i class="bi bi-cpu me-1"></i> LangChain</span>
+                <span class="badge bg-glass me-2"><i class="bi bi-diagram-3 me-1"></i> LangGraph</span>
+                <span class="badge bg-glass me-2"><i class="bi bi-database me-1"></i> Vector DBs</span>
+                <span class="badge bg-glass"><i class="bi bi-cloud me-1"></i> Cloud AI</span>
+              </div>
+              <div class="stats-row" data-aos="fade-up" data-aos-delay="450">
+                <div class="stat-item">
+                  <span class="stat-number">5+</span>
+                  <span class="stat-label">AI Projects</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">24-48h</span>
+                  <span class="stat-label">Response Time</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">100%</span>
+                  <span class="stat-label">Remote</span>
+                </div>
+              </div>
               <div class="hero-actions" data-aos="fade-up" data-aos-delay="500">
                 <a href="#project" class="btn btn-primary">View My Work</a>
                 <a href="#contact" class="btn btn-outline">Get In Touch</a>
@@ -237,7 +337,116 @@
       </div>
 
     </section><!-- /About Section -->
-    <!-- ========================================================= start from their tomorrow============================ -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>What I Can Build For You</h2>
+        <p>Specialized AI solutions that automate workflows, unlock insights, and scale your operations</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+        <div class="row gy-4">
+
+          <!-- Service 1: Agents -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item glass-card shimmer-border">
+              <div class="icon-container">
+                <i class="bi bi-cpu-fill"></i>
+              </div>
+              <h3>Autonomous AI Agents</h3>
+              <p>Beyond simple chat—developing autonomous agents using <strong>LangGraph</strong> that can browse, use
+                tools, and execute logic independently.</p>
+              <ul class="service-list mt-3">
+                <li>Multi-agent orchestration</li>
+                <li>Self-correcting RAG loops</li>
+                <li>Tool & API integration</li>
+              </ul>
+            </div>
+          </div><!-- End Service Item -->
+
+          <!-- Service 2: RAG -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item glass-card shimmer-border">
+              <div class="icon-container">
+                <i class="bi bi-layers-half"></i>
+              </div>
+              <h3>Enterprise RAG Pipelines</h3>
+              <p>Architecting production-grade retrieval systems with sub-second latency, integrating <strong>Vector
+                  DBs</strong> and hybrid search.</p>
+              <ul class="service-list mt-3">
+                <li>Advanced chunking strategies</li>
+                <li>Semantic & keyword hybrid search</li>
+                <li>Metadata-filtered retrieval</li>
+              </ul>
+            </div>
+          </div><!-- End Service Item -->
+
+          <!-- Service 3: Custom LLMs -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item glass-card shimmer-border">
+              <div class="icon-container">
+                <i class="bi bi-stars"></i>
+              </div>
+              <h3>LLM Customization</h3>
+              <p>Optimizing models for vertical-specific tasks through <strong>RAG-based fine-tuning</strong> and
+                advanced prompt engineering.</p>
+              <ul class="service-list mt-3">
+                <li>Domain-specific prompt tuning</li>
+                <li>Model evaluation & benchmarking</li>
+                <li>Cost-efficient token optimization</li>
+              </ul>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Process Section -->
+    <section id="process" class="process section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>How I Work</h2>
+        <p>A proven, end-to-end process for delivering high-impact AI solutions.</p>
+      </div>
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="process-item glass-card">
+
+              <h3>Consultation</h3>
+              <p>Deep dive into your business needs, data architecture, and desired outcomes.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="process-item glass-card">
+
+              <h3>AI Strategy</h3>
+              <p>Selecting optimal LLMs and designing robust RAG or agentic architectures.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="process-item glass-card">
+
+              <h3>Development</h3>
+              <p>Rapid, iterative building using CI/CD pipelines and production-grade code.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="process-item glass-card">
+
+              <h3>Deployment</h3>
+              <p>Cloud integration, monitoring, and scaling to ensure long-term ROI.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Process Section -->
+
 
     <!-- project Section -->
     <section id="project" class="project section">
@@ -259,15 +468,15 @@
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
           <ul class="project-filters isotope-filters" data-aos="fade-up" data-aos-delay="200">
             <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-ai-engineering">AI Engineering</li>
-            <li data-filter=".filter-data-engineering">Gen AI Engineering</li>
+            <li data-filter=".filter-ai-project">AI Project</li>
+            <li data-filter=".filter-genai-project">Gen AI Project</li>
             <li data-filter=".filter-cloud-project">Cloud Project</li>
           </ul>
           <!-- End project Filters -->
 
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
             <!-- Blood Pressure Analyzer (Done) -->
-            <div class="col-lg-4 col-md-6 project-item isotope-item filter-ai-engineering">
+            <div class="col-lg-4 col-md-6 project-item isotope-item filter-ai-project">
               <a href="https://github.com/Mehmaam99/Blood-Pressure-Analyzer" target="_blank">
                 <div class="project-card">
                   <div class="project-img">
@@ -309,7 +518,7 @@
             </div>
 
             <!-- SQL Data Warehouse (Done)-->
-            <div class="col-lg-4 col-md-6 project-item isotope-item filter-data-engineering">
+            <div class="col-lg-4 col-md-6 project-item isotope-item filter-genai-project filter-cloud-project">
               <a href="https://github.com/Mehmaam99/sql-data-warehouse-project" target="_blank">
                 <div class="project-card">
                   <div class="project-img">
@@ -331,14 +540,14 @@
             </div>
 
             <!-- ETL Pipeline for Hospital Services -->
-            <div class="col-lg-4 col-md-6 project-item isotope-item filter-data-engineering">
+            <div class="col-lg-4 col-md-6 project-item isotope-item filter-genai-project">
               <a href="https://github.com/Mehmaam99/hospital-data-engineering-pipeline" target="_blank">
                 <div class="project-card">
                   <div class="project-img">
                     <img src="assets/img/project/Hospital-pipeline.png" alt="Project Item" class="img-fluid">
                   </div>
                   <div class="project-info">
-                    <h4>Hospital Gen AI Engineering Pipeline </h4>
+                    <h4>Hospital Gen AI Engineering Pipeline</h4>
                     <p>A data-driven solution that processes hospital records to monitor costs, analyze departmental
                       expenses, and deliver insights for smarter financial decisions.</p>
                     <div class="project-tags">
@@ -395,7 +604,7 @@
 
 
             <!-- Smart Occupancy Detection System -->
-            <div class="col-lg-4 col-md-6 project-item isotope-item filter-ai-engineering filter-cloud-project">
+            <div class="col-lg-4 col-md-6 project-item isotope-item filter-genai-project filter-cloud-project">
               <a href="https://github.com/Mehmaam99/Retrieval_Augmented_Generation_RAG_Data_Pipeline" target="_blank">
                 <div class="project-card">
                   <div class="project-img">
@@ -407,7 +616,7 @@
                       speech-to-text transcription, and converts the text into vector embeddings for storage in a vector
                       database.</p>
                     <div class="project-tags">
-                      <span>Pyhton</span>
+                      <span>Python</span>
                       <span>AWS</span>
                       <span>S3</span>
                       <span>RAG</span>
@@ -507,12 +716,58 @@
     </section>
     <!-- /Resume Section -->
 
+    <!-- Why Hire Me Section -->
+    <section id="why-hire" class="why-hire section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Why Work With Me?</h2>
+        <p>I combine deep AI research with production-grade engineering to deliver scalable, reliable solutions.</p>
+      </div>
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="authority-item glass-card shimmer-border">
+              <div class="authority-badge"><i class="bi bi-check2-circle"></i> Scalable</div>
+              <div class="icon-container">
+                <i class="bi bi-shield-lock-fill"></i>
+              </div>
+              <h3>Secure & Scalable</h3>
+              <p>I architect AI solutions prioritizing privacy and compliance, built to handle enterprise-scale datasets
+                with zero downtime.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="authority-item glass-card shimmer-border">
+              <div class="authority-badge"><i class="bi bi-lightning-fill"></i> Fast</div>
+              <div class="icon-container">
+                <i class="bi bi-node-plus-fill"></i>
+              </div>
+              <h3>Agentic Intelligence</h3>
+              <p>I specialize in self-reasoning AI loops that don't just "talk"—they think, plan, and execute multi-step
+                workflows.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="authority-item glass-card shimmer-border">
+              <div class="authority-badge"><i class="bi bi-hdd-network-fill"></i> Hybrid</div>
+              <div class="icon-container">
+                <i class="bi bi-cloud-check-fill"></i>
+              </div>
+              <h3>Cloud-Native Edge</h3>
+              <p>Whether on AWS or Azure—I ensure your AI stack is performant, cost-optimized, and integrated with your
+                existing data infra.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Why Hire Me Section -->
+
     <!-- Contact Section -->
     <section id="contact" class="contact section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Let’s build with AI </h2>
+        <h2>Let’s build with AI</h2>
         <p>I help teams automate workflows and unleash the potential of their data through Gen AI agents and robust AI
           pipelines. Share a brief on your use case and I’ll get back within 24–48 hours.</p>
       </div><!-- End Section Title -->
@@ -521,47 +776,36 @@
 
         <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
           <div class="col-12 col-lg-6">
-            <div class="info-box">
-              <h3>Contact Info</h3>
-              <p>For any inquiries, please contact me via email.</p>
+            <div class="info-box glass-card shimmer-border" style="color: #ffffff;">
+              <h3 style="color: #ffffff;">Contact Info</h3>
+              <p style="color: #ffffff;">For any inquiries, please contact me via email.</p>
 
-              <div class="info-item">
-                <div class="icon-box">
-                  <i class="bi bi-envelope"></i>
-                </div>
-                <div class="content">
-                  <h4>Project Inquiries</h4>
-                  <p>For engagements, collaborations, and consulting.</p>
-                  <p class="email-pop">
-                    <a href="mailto:muhammadmehmaam@gmail.com">muhammadmehmaam@gmail.com</a>
-                  </p>
-                </div>
-              </div>
+              <div class="mt-4">
+                <h4 style="color: #ffffff; font-weight: 700; font-size: 1.1rem; margin-bottom: 5px;">Project Inquiries
+                </h4>
+                <p style="color: #ffffff; margin-bottom: 5px;">For engagements, collaborations, and consulting.</p>
+                <p class="email-pop" style="margin-bottom: 15px;">
+                  <a href="mailto:muhammadmehmam@gmail.com"
+                    style="color: #00e5ff; font-weight: bold;">muhammadmehmam@gmail.com</a>
+                </p>
 
-              <div class="info-item">
-                <div class="icon-box">
-                  <i class="bi bi-person"></i>
-                </div>
-                <div class="content">
-                  <h4>Preferred Contact</h4>
-                  <p>Email is best for initial scoping or used LinkedIn too.</p>
-                  <p>Happy to schedule a call after your message.</p>
-                </div>
-              </div>
+                <h4 style="color: #ffffff; font-weight: 700; font-size: 1.1rem; margin-bottom: 5px;">Preferred Contact
+                </h4>
+                <p style="color: #ffffff; margin-bottom: 5px;">Email is best for initial scoping or use LinkedIn.</p>
+                <p style="color: #ffffff; margin-bottom: 15px;">Happy to schedule a call after your message.</p>
 
-              <div class="info-item">
-                <div class="icon-box">
-                  <i class="bi bi-geo-alt"></i>
-                </div>
-                <div class="content">
-                  <h4>Location & Availability</h4>
-                  <p>Remote — Worldwide</p>
-                  <p>Replies within 12–24 hours (business days)</p>
-                </div>
+                <h4 style="color: #ffffff; font-weight: 700; font-size: 1.1rem; margin-bottom: 5px;">Location &
+                  Availability</h4>
+                <p style="color: #ffffff; margin-bottom: 5px;">Remote — Worldwide</p>
+                <p style="color: #ffffff; opacity: 0.8; font-size: 0.9rem;">Replies within 12–24 hours (business days)
+                </p>
               </div>
             </div>
+
           </div>
         </div>
+      </div>
+      </div>
 
       </div>
 
@@ -617,7 +861,7 @@
   <!-- XSS Sanitizer -->
   <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
   <!-- Embed Widget -->
-  <script src="widget.js?v=2"></script>
+  <script src="widget.js?v=6"></script>
 
 
 </body>
