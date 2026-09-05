@@ -2,673 +2,681 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta name="description"
-    content="Syed Muhammad Mehmam - AI Engineer specializing in LLMs, RAG pipelines, LangGraph Agents, and Computer Vision. Building production-ready AI systems.">
-  <meta name="keywords"
-    content="AI Engineer, LLM, RAG, LangGraph, LangChain, Computer Vision, YOLO, FastAPI, Generative AI">
-  <title>Syed Muhammad Mehmam | AI Engineer</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon.png">
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700;800&family=Raleway:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <style>
-    .availability-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(34, 197, 94, 0.1);
-      border: 1px solid rgba(34, 197, 94, 0.3);
-      padding: 8px 16px;
-      border-radius: 50px;
-      margin-bottom: 20px;
-      font-size: 14px;
-      color: #22c55e;
-      font-weight: 500;
-    }
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta name="description"
+content="Syed Muhammad Mehmam - AI Engineer specializing in LLMs, RAG pipelines, LangGraph Agents, and Computer Vision. Building production-ready AI systems.">
+<meta name="keywords"
+content="AI Engineer, LLM, RAG, LangGraph, LangChain, Computer Vision, YOLO, FastAPI, Generative AI">
+<title>Syed Muhammad Mehmam | AI Engineer</title>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon.png">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+<link
+href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700;800&family=Raleway:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="assets/vendor/aos/aos.css" rel="stylesheet">
+<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+<link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+<style>
+.availability-badge {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+background: rgba(34, 197, 94, 0.1);
+border: 1px solid rgba(34, 197, 94, 0.3);
+padding: 8px 16px;
+border-radius: 50px;
+margin-bottom: 20px;
+font-size: 14px;
+color: #22c55e;
+font-weight: 500;
+}
 
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      background: #22c55e;
-      border-radius: 50%;
-      animation: pulse 2s ease-in-out infinite;
-    }
+.status-dot {
+width: 8px;
+height: 8px;
+background: #22c55e;
+border-radius: 50%;
+animation: pulse 2s ease-in-out infinite;
+}
 
-    @keyframes pulse {
+@keyframes pulse {
+0%,
+100% {
+opacity: 1
+}
 
-      0%,
-      100% {
-        opacity: 1
-      }
+50% {
+opacity: 0.5
+}
+}
 
-      50% {
-        opacity: 0.5
-      }
-    }
+.stats-row {
+display: flex;
+gap: 30px;
+margin: 25px 0;
+flex-wrap: wrap;
+}
 
-    .stats-row {
-      display: flex;
-      gap: 30px;
-      margin: 25px 0;
-      flex-wrap: wrap;
-    }
+.stat-item {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+}
 
-    .stat-item {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
+.stat-number {
+font-size: 2rem;
+font-weight: 700;
+color: var(--accent-color);
+line-height: 1;
+}
 
-    .stat-number {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--accent-color);
-      line-height: 1;
-    }
+.stat-label {
+font-size: 0.875rem;
+color: var(--default-color);
+opacity: 0.7;
+margin-top: 5px;
+}
 
-    .stat-label {
-      font-size: 0.875rem;
-      color: var(--default-color);
-      opacity: 0.7;
-      margin-top: 5px;
-    }
+@media(max-width:768px) {
+.stats-row {
+gap: 20px
+}
 
-    @media(max-width:768px) {
-      .stats-row {
-        gap: 20px
-      }
-
-      .stat-number {
-        font-size: 1.5rem
-      }
-    }
-  </style>
-  <link href="assets/css/main.css" rel="stylesheet">
+.stat-number {
+font-size: 1.5rem
+}
+}
+</style>
+<link href="assets/css/main.css" rel="stylesheet">
 </head>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MPJY6YDH30"></script>
 <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments) } gtag('js', new Date()); gtag('config', 'G-MPJY6YDH30');</script>
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center light-background sticky-top">
-    <div class="container position-relative d-flex align-items-center justify-content-between">
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#project">Projects</a></li>
-          <li><a href="#resume">Resume</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-      <div class="header-social-links">
-        <a href="https://github.com/Mehmaam99" target="_blank" rel="noopener" class="github"><i
-            class="bi bi-github"></i></a>
-        <a href="https://www.linkedin.com/in/muhammad-mehmam/" target="_blank" rel="noopener" class="linkedin"><i
-            class="bi bi-linkedin"></i></a>
-        <a href="https://www.instagram.com/mehmam.ai" target="_blank" rel="noopener" class="instagram"><i
-            class="bi bi-instagram"></i></a>
-        <a href="https://www.upwork.com/freelancers/~01e268eabda4a17736?mp_source=share" target="_blank" title="Upwork"
-          style="font-size:14px;font-weight:700;text-decoration:none;color:inherit;">UW</a>
-        <a href="https://www.fiverr.com/mehmam_ai" target="_blank" rel="noopener" title="Fiverr"
-          style="font-size:14px;font-weight:700;text-decoration:none;color:inherit;">FV</a>
-      </div>
-    </div>
-  </header>
+<header id="header" class="header d-flex align-items-center light-background sticky-top">
+<div class="container position-relative d-flex align-items-center justify-content-between">
+<nav id="navmenu" class="navmenu">
+<ul>
+<li><a href="#hero" class="active">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#project">Projects</a></li>
+<li><a href="#resume">Resume</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+</nav>
+<div class="header-social-links">
+<a href="https://github.com/Mehmaam99" target="_blank" rel="noopener" class="github"><i
+class="bi bi-github"></i></a>
+<a href="https://www.linkedin.com/in/muhammad-mehmam/" target="_blank" rel="noopener" class="linkedin"><i
+class="bi bi-linkedin"></i></a>
+<a href="https://www.instagram.com/mehmam.ai" target="_blank" rel="noopener" class="instagram"><i
+class="bi bi-instagram"></i></a>
+<a href="https://www.upwork.com/freelancers/~01e268eabda4a17736?mp_source=share" target="_blank" title="Upwork"
+style="font-size:14px;font-weight:700;text-decoration:none;color:inherit;">UW</a>
+<a href="https://www.fiverr.com/mehmam_ai" target="_blank" rel="noopener" title="Fiverr"
+style="font-size:14px;font-weight:700;text-decoration:none;color:inherit;">FV</a>
+</div>
+</div>
+</header>
 
-  <main class="main">
+<main class="main">
 
-    <!-- HERO -->
-    <section id="hero" class="hero section">
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4 align-items-center">
-          <div class="col-lg-6 order-2 order-lg-1">
-            <div class="hero-content">
-              <div class="availability-badge" data-aos="fade-down" data-aos-delay="100">
-                <span class="status-dot"></span>
-                <span class="status-text">Available for Hire — Open to Remote &amp; Full-Time Roles</span>
-              </div>
-              <h1 data-aos="fade-up" data-aos-delay="200">Build <span class="highlight">Production AI Systems</span>
-                that work at scale.</h1>
-              <p data-aos="fade-up" data-aos-delay="400">Syed Muhammad Mehmam — AI Engineer with 3+ years of production
-                experience in LLMs, RAG pipelines, LangGraph agents, and Computer Vision. I built a healthcare
-                intelligence platform processing 500+ sessions/month and reduced documentation time by 60%.</p>
-              <div class="primary-skills-badges mb-4" data-aos="fade-up" data-aos-delay="420">
-                <span class="badge bg-glass me-2"><i class="bi bi-cpu me-1"></i> LangChain</span>
-                <span class="badge bg-glass me-2"><i class="bi bi-diagram-3 me-1"></i> LangGraph</span>
-                <span class="badge bg-glass me-2"><i class="bi bi-database me-1"></i> ChromaDB</span>
-                <span class="badge bg-glass"><i class="bi bi-eye me-1"></i> YOLOv8</span>
-              </div>
-              <div class="stats-row" data-aos="fade-up" data-aos-delay="450">
-                <div class="stat-item"><span class="stat-number">3+</span><span class="stat-label">Years Production
-                    AI</span></div>
-                <div class="stat-item"><span class="stat-number">500+</span><span
-                    class="stat-label">Sessions/Month</span></div>
-                <div class="stat-item"><span class="stat-number">60%</span><span class="stat-label">Doc Time
-                    Reduced</span></div>
-              </div>
-              <div class="hero-actions" data-aos="fade-up" data-aos-delay="500">
-                <a href="#project" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn btn-outline">Get In Touch</a>
-              </div>
-              <div class="social-links" data-aos="fade-up" data-aos-delay="600">
-                <a href="https://github.com/Mehmaam99" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
-                <a href="https://www.linkedin.com/in/muhammad-mehmam/" target="_blank" rel="noopener"><i
-                    class="bi bi-linkedin"></i></a>
-                <a href="https://www.instagram.com/mehmam.ai" target="_blank" rel="noopener"><i
-                    class="bi bi-instagram"></i></a>
-                <a href="https://www.upwork.com/freelancers/~01e268eabda4a17736?mp_source=share" target="_blank"
-                  rel="noopener" title="Upwork"
-                  style="font-size:13px;font-weight:700;padding:4px 8px;border:1px solid currentColor;border-radius:4px;text-decoration:none;color:inherit;">Upwork</a>
-                <a href="https://www.fiverr.com/mehmam_ai" target="_blank" rel="noopener" title="Fiverr"
-                  style="font-size:13px;font-weight:700;padding:4px 8px;border:1px solid currentColor;border-radius:4px;text-decoration:none;color:inherit;">Fiverr</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 order-1 order-lg-2">
-            <div class="hero-image" data-aos="zoom-in" data-aos-delay="300">
-              <div class="image-wrapper">
-                <img src="assets/img/profile/profile-square-profile-size.png" alt="Syed Muhammad Mehmam"
-                  class="img-fluid">
-                <div class="floating-elements">
-                  <div class="floating-card design" data-aos="fade-left" data-aos-delay="700"><i
-                      class="bi bi-palette"></i><span>Design</span></div>
-                  <div class="floating-card code" data-aos="fade-right" data-aos-delay="800"><i
-                      class="bi bi-code-slash"></i><span>Code</span></div>
-                  <div class="floating-card creativity" data-aos="fade-up" data-aos-delay="900"><i
-                      class="bi bi-lightbulb"></i><span>Ideas</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<!-- HERO -->
+<section id="hero" class="hero section">
+<div class="container" data-aos="fade-up" data-aos-delay="100">
+<div class="row gy-4 align-items-center">
+<div class="col-lg-6 order-2 order-lg-1">
+<div class="hero-content">
+<div class="availability-badge" data-aos="fade-down" data-aos-delay="100">
+<span class="status-dot"></span>
+<span class="status-text">Available for Hire — Open to Remote &amp; Full-Time Roles</span>
+</div>
+<h1 data-aos="fade-up" data-aos-delay="200">Build <span class="highlight">Production AI Systems</span>
+that work at scale.</h1>
+<p data-aos="fade-up" data-aos-delay="400">Syed Muhammad Mehmam — AI Engineer with 4+ years of production
+experience in LLMs, RAG pipelines, LangGraph agents, and Computer Vision. I built a healthcare
+intelligence platform processing 500+ sessions/month and reduced documentation time by 60%.</p>
+<div class="primary-skills-badges mb-4" data-aos="fade-up" data-aos-delay="420">
+<span class="badge bg-glass me-2"><i class="bi bi-cpu me-1"></i> LangChain</span>
+<span class="badge bg-glass me-2"><i class="bi bi-diagram-3 me-1"></i> LangGraph</span>
+<span class="badge bg-glass me-2"><i class="bi bi-database me-1"></i> ChromaDB</span>
+<span class="badge bg-glass"><i class="bi bi-eye me-1"></i> YOLOv8</span>
+</div>
+<div class="stats-row" data-aos="fade-up" data-aos-delay="450">
+<div class="stat-item"><span class="stat-number">4+</span><span class="stat-label">Years Production
+AI</span></div>
+<div class="stat-item"><span class="stat-number">500+</span><span
+class="stat-label">Sessions/Month</span></div>
+<div class="stat-item"><span class="stat-number">60%</span><span class="stat-label">Doc Time
+Reduced</span></div>
+</div>
+<div class="hero-actions" data-aos="fade-up" data-aos-delay="500">
+<a href="#project" class="btn btn-primary">View My Work</a>
+<a href="#contact" class="btn btn-outline">Get In Touch</a>
+</div>
+<div class="social-links" data-aos="fade-up" data-aos-delay="600">
+<a href="https://github.com/Mehmaam99" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
+<a href="https://www.linkedin.com/in/muhammad-mehmam/" target="_blank" rel="noopener"><i
+class="bi bi-linkedin"></i></a>
+<a href="https://www.instagram.com/mehmam.ai" target="_blank" rel="noopener"><i
+class="bi bi-instagram"></i></a>
+<a href="https://www.upwork.com/freelancers/~01e268eabda4a17736?mp_source=share" target="_blank"
+rel="noopener" title="Upwork"
+style="font-size:13px;font-weight:700;padding:4px 8px;border:1px solid currentColor;border-radius:4px;text-decoration:none;color:inherit;">Upwork</a>
+<a href="https://www.fiverr.com/mehmam_ai" target="_blank" rel="noopener" title="Fiverr"
+style="font-size:13px;font-weight:700;padding:4px 8px;border:1px solid currentColor;border-radius:4px;text-decoration:none;color:inherit;">Fiverr</a>
+</div>
+</div>
+</div>
+<div class="col-lg-6 order-1 order-lg-2">
+<div class="hero-image" data-aos="zoom-in" data-aos-delay="300">
+<div class="image-wrapper">
+<img src="assets/img/profile/profile-square-profile-size.png" alt="Syed Muhammad Mehmam"
+class="img-fluid">
+<div class="floating-elements">
+<div class="floating-card design" data-aos="fade-left" data-aos-delay="700"><i
+class="bi bi-palette"></i><span>Design</span></div>
+<div class="floating-card code" data-aos="fade-right" data-aos-delay="800"><i
+class="bi bi-code-slash"></i><span>Code</span></div>
+<div class="floating-card creativity" data-aos="fade-up" data-aos-delay="900"><i
+class="bi bi-lightbulb"></i><span>Ideas</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-    <!-- ABOUT -->
-    <section id="about" class="about section">
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row align-items-center justify-content-between gy-5 mb-5">
-          <div data-aos="fade-right" data-aos-delay="150">
-            <div class="intro-content">
-              <span class="eyebrow">AI Engineer</span>
-              <h2 class="headline">I build LLM chatbots, RAG pipelines, and LangGraph agents that work in production —
-                not just demos.</h2>
-              <p class="lead">3+ years building production AI systems for healthcare, manufacturing, and enterprise
-                clients. I specialize in making LLMs reliable, observable, and cost-efficient at scale.</p>
-              <p>At Xloop Digital Services, I built a healthcare intelligence platform processing 500+ clinical sessions
-                per month — reducing documentation time by 60%. I also optimized a diarization pipeline from 17 minutes
-                to 5 minutes using FastWhisper, and built a real-time factory surveillance system using YOLOv8.</p>
-              <div class="cta-group">
-                <a href="https://www.linkedin.com/in/muhammad-mehmam/" target="_blank" class="link-underline">Connect on
-                  LinkedIn <i class="bi bi-linkedin"></i></a>
-                &nbsp;&nbsp;
-                <a href="https://www.upwork.com/freelancers/muhammadmehmam" target="_blank" class="link-underline">Hire
-                  on Upwork</a>
-                &nbsp;&nbsp;
-                <a href="https://www.fiverr.com/mehmam_ai" target="_blank" class="link-underline">Order on Fiverr</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mb-5">
-          <div class="row g-4">
-            <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="120">
-              <div class="skill-item"><i class="bi bi-cpu"></i>
-                <h3>LLM &amp; RAG Engineer</h3>
-                <p>Build RAG pipelines with LangChain, ChromaDB, and Groq LLM.</p>
-              </div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="180">
-              <div class="skill-item"><i class="bi bi-robot"></i>
-                <h3>LangGraph Agent Dev</h3>
-                <p>Stateful AI agents with tool calling and LangSmith monitoring.</p>
-              </div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="240">
-              <div class="skill-item"><i class="bi bi-eye"></i>
-                <h3>Computer Vision</h3>
-                <p>YOLOv8 object detection APIs with OpenCV and FastAPI.</p>
-              </div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-              <div class="skill-item"><i class="bi bi-gear-wide-connected"></i>
-                <h3>Production APIs</h3>
-                <p>FastAPI backends with Docker, cloud deployment, and monitoring.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- TIMELINE - fixed last entry -->
-        <div class="mb-5">
-          <div class="row g-4">
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="120">
-              <article class="timeline-item"><span class="dot"></span><time>2018–2022</time>
-                <h4>BS Computer Science</h4>
-                <p>Sir Syed University of Engineering and Technology — CGPA 3.54</p>
-              </article>
-            </div>
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="180">
-              <article class="timeline-item"><span class="dot"></span><time>2022–2023</time>
-                <h4>Data Scientist</h4>
-                <p>OCR pipelines, time-series forecasting, predictive models at ArtisticMilliners.</p>
-              </article>
-            </div>
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="240">
-              <article class="timeline-item"><span class="dot"></span><time>2023–2025</time>
-                <h4>AI Engineer</h4>
-                <p>LangChain, LangGraph, LangSmith, YOLOv8, RAG pipelines at Xloop Digital Services.</p>
-              </article>
-            </div>
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-              <article class="timeline-item"><span class="dot"></span><time>2025 — Now</time>
-                <h4>AI Engineer</h4>
-                <p>Freelance AI projects — LangGraph agents, RAG chatbots, Computer Vision APIs.</p>
-              </article>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<!-- ABOUT -->
+<section id="about" class="about section">
+<div class="container" data-aos="fade-up" data-aos-delay="100">
+<div class="row align-items-center justify-content-between gy-5 mb-5">
+<div data-aos="fade-right" data-aos-delay="150">
+<div class="intro-content">
+<span class="eyebrow">AI Engineer</span>
+<h2 class="headline">I build LLM chatbots, RAG pipelines, and LangGraph agents that work in production —
+not just demos.</h2>
+<p class="lead">4+ years building production AI systems for healthcare, manufacturing, and enterprise
+clients. I specialize in making LLMs reliable, observable, and cost-efficient at scale.</p>
+<p>At Xloop Digital Services, I built a healthcare intelligence platform processing 500+ clinical sessions
+per month — reducing documentation time by 60%. I also optimized a diarization pipeline from 17 minutes
+to 5 minutes using FastWhisper, and built a real-time factory surveillance system using YOLOv8.</p>
+<div class="cta-group">
+<a href="https://www.linkedin.com/in/muhammad-mehmam/" target="_blank" class="link-underline">Connect on
+LinkedIn <i class="bi bi-linkedin"></i></a>
+&nbsp;&nbsp;
+<a href="https://www.upwork.com/freelancers/muhammadmehmam" target="_blank" class="link-underline">Hire
+on Upwork</a>
+&nbsp;&nbsp;
+<a href="https://www.fiverr.com/mehmam_ai" target="_blank" class="link-underline">Order on Fiverr</a>
+</div>
+</div>
+</div>
+</div>
 
-    <!-- SERVICES -->
-    <section id="services" class="services section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>What I Can Build For You</h2>
-        <p>Production-ready AI solutions — not just prototypes</p>
-      </div>
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item glass-card shimmer-border">
-              <div class="icon-container"><i class="bi bi-layers-half"></i></div>
-              <h3>RAG Document Chatbots</h3>
-              <p>Chat with your own documents — PDFs, manuals, knowledge bases. Powered by <strong>LangChain +
-                  ChromaDB</strong> with source-cited answers.</p>
-              <ul class="service-list mt-3">
-                <li>Semantic search + citations</li>
-                <li>FastAPI production backend</li>
-                <li>Multi-document support</li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item glass-card shimmer-border">
-              <div class="icon-container"><i class="bi bi-cpu-fill"></i></div>
-              <h3>LangGraph AI Agents</h3>
-              <p>Stateful agents that reason, call tools, and execute multi-step workflows automatically using
-                <strong>LangGraph</strong> with conditional routing.
-              </p>
-              <ul class="service-list mt-3">
-                <li>Tool calling + memory</li>
-                <li>LangSmith observability</li>
-                <li>Custom tool integration</li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item glass-card shimmer-border">
-              <div class="icon-container"><i class="bi bi-eye-fill"></i></div>
-              <h3>Computer Vision APIs</h3>
-              <p>Real-time object detection systems using <strong>YOLOv8</strong> — people, vehicles, custom objects —
-                deployed as a production FastAPI.</p>
-              <ul class="service-list mt-3">
-                <li>80 COCO classes + custom</li>
-                <li>Bounding boxes + scores</li>
-                <li>Image and video support</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<div class="mb-5">
+<div class="row g-4">
+<div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="120">
+<div class="skill-item"><i class="bi bi-cpu"></i>
+<h3>LLM &amp; RAG Engineer</h3>
+<p>Build RAG pipelines with LangChain, ChromaDB, and Groq LLM.</p>
+</div>
+</div>
+<div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="180">
+<div class="skill-item"><i class="bi bi-robot"></i>
+<h3>LangGraph Agent Dev</h3>
+<p>Stateful AI agents with tool calling and LangSmith monitoring.</p>
+</div>
+</div>
+<div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="240">
+<div class="skill-item"><i class="bi bi-eye"></i>
+<h3>Computer Vision</h3>
+<p>YOLOv8 object detection APIs with OpenCV and FastAPI.</p>
+</div>
+</div>
+<div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+<div class="skill-item"><i class="bi bi-gear-wide-connected"></i>
+<h3>Production APIs</h3>
+<p>FastAPI backends with Docker, cloud deployment, and monitoring.</p>
+</div>
+</div>
+</div>
+</div>
 
-    <!-- PROCESS -->
-    <section id="process" class="process section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>How I Work</h2>
-        <p>A proven, end-to-end process for delivering production AI solutions.</p>
-      </div>
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="process-item glass-card">
-              <h3>Consultation</h3>
-              <p>Deep dive into your business needs, data, and desired outcomes.</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="process-item glass-card">
-              <h3>AI Strategy</h3>
-              <p>Selecting optimal LLMs and designing RAG or agentic architectures.</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="process-item glass-card">
-              <h3>Development</h3>
-              <p>Rapid, iterative building with production-grade documented code.</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="process-item glass-card">
-              <h3>Deployment</h3>
-              <p>API deployment, LangSmith monitoring, and handover with full docs.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<!-- TIMELINE - updated with PurposeLee + OrbitThink + corrected dates -->
+<div class="mb-5">
+<div class="row g-4">
+<div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="120">
+<article class="timeline-item"><span class="dot"></span><time>2018–2022</time>
+<h4>BS Computer Science</h4>
+<p>Sir Syed University of Engineering and Technology — CGPA 3.54</p>
+</article>
+</div>
+<div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="160">
+<article class="timeline-item"><span class="dot"></span><time>May 2022 – Nov 2022</time>
+<h4>Data Scientist</h4>
+<p>OCR pipelines, time-series forecasting, predictive models at ArtisticMilliners.</p>
+</article>
+</div>
+<div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+<article class="timeline-item"><span class="dot"></span><time>Nov 2022 – Jul 2025</time>
+<h4>AI Engineer</h4>
+<p>LangChain, LangGraph, LangSmith, YOLOv8, RAG pipelines at Xloop Digital Services.</p>
+</article>
+</div>
+<div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="240">
+<article class="timeline-item"><span class="dot"></span><time>Nov 2025 – May 2026</time>
+<h4>AI Engineer</h4>
+<p>LangGraph conversational agent, RAG pipelines, AI automation at OrbitThink (Contract).</p>
+</article>
+</div>
+<div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="280">
+<article class="timeline-item"><span class="dot"></span><time>Jul 2026 — Present</time>
+<h4>Technical Team Lead</h4>
+<p>Leading engineering team, AI architecture, and delivery at PurposeLee (Contract).</p>
+</article>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-    <!-- PROJECTS -->
-    <section id="project" class="project section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Projects</h2>
-        <p>Production-ready AI systems with full source code, documentation, and live demo videos.</p>
-      </div>
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-          <ul class="project-filters isotope-filters" data-aos="fade-up" data-aos-delay="200">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-ai-project">AI Project</li>
-            <li data-filter=".filter-genai-project">Gen AI Project</li>
-            <li data-filter=".filter-cloud-project">Cloud Project</li>
-          </ul>
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
+<!-- SERVICES -->
+<section id="services" class="services section">
+<div class="container section-title" data-aos="fade-up">
+<h2>What I Can Build For You</h2>
+<p>Production-ready AI solutions — not just prototypes</p>
+</div>
+<div class="container">
+<div class="row gy-4">
+<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+<div class="service-item glass-card shimmer-border">
+<div class="icon-container"><i class="bi bi-layers-half"></i></div>
+<h3>RAG Document Chatbots</h3>
+<p>Chat with your own documents — PDFs, manuals, knowledge bases. Powered by <strong>LangChain +
+ChromaDB</strong> with source-cited answers.</p>
+<ul class="service-list mt-3">
+<li>Semantic search + citations</li>
+<li>FastAPI production backend</li>
+<li>Multi-document support</li>
+</ul>
+</div>
+</div>
+<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+<div class="service-item glass-card shimmer-border">
+<div class="icon-container"><i class="bi bi-cpu-fill"></i></div>
+<h3>LangGraph AI Agents</h3>
+<p>Stateful agents that reason, call tools, and execute multi-step workflows automatically using
+<strong>LangGraph</strong> with conditional routing.
+</p>
+<ul class="service-list mt-3">
+<li>Tool calling + memory</li>
+<li>LangSmith observability</li>
+<li>Custom tool integration</li>
+</ul>
+</div>
+</div>
+<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+<div class="service-item glass-card shimmer-border">
+<div class="icon-container"><i class="bi bi-eye-fill"></i></div>
+<h3>Computer Vision APIs</h3>
+<p>Real-time object detection systems using <strong>YOLOv8</strong> — people, vehicles, custom objects —
+deployed as a production FastAPI.</p>
+<ul class="service-list mt-3">
+<li>80 COCO classes + custom</li>
+<li>Bounding boxes + scores</li>
+<li>Image and video support</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-            <!-- NEW: RAG Chatbot -->
-            <div class="col-lg-4 col-md-6 project-item isotope-item filter-genai-project filter-ai-project">
-              <a href="https://github.com/Mehmaam99/rag-document-chatbot" target="_blank">
-                <div class="project-card">
-                  <div class="project-img"><img src="assets/img/project/thumbnail_RAG.png" alt="RAG Document Chatbot"
-                      class="img-fluid"></div>
-                  <div class="project-info">
-                    <h4>RAG Document Chatbot</h4>
-                    <p>Upload any PDF and chat with it instantly. Answers include source citations — built with
-                      LangChain, ChromaDB, and Groq LLM on a FastAPI backend.</p>
-                    <div class="project-tags"><span>LangChain</span><span>ChromaDB</span><span>Groq
-                        LLM</span><span>FastAPI</span></div>
-                    <div class="mt-2"><a href="https://youtu.be/SkITBQkZz28" target="_blank"
-                        onclick="event.stopPropagation()" style="font-size:13px;color:var(--accent-color);">&#9654;
-                        Watch Demo</a></div>
-                  </div>
-                </div>
-              </a>
-            </div>
+<!-- PROCESS -->
+<section id="process" class="process section">
+<div class="container section-title" data-aos="fade-up">
+<h2>How I Work</h2>
+<p>A proven, end-to-end process for delivering production AI solutions.</p>
+</div>
+<div class="container">
+<div class="row gy-4">
+<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+<div class="process-item glass-card">
+<h3>Consultation</h3>
+<p>Deep dive into your business needs, data, and desired outcomes.</p>
+</div>
+</div>
+<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+<div class="process-item glass-card">
+<h3>AI Strategy</h3>
+<p>Selecting optimal LLMs and designing RAG or agentic architectures.</p>
+</div>
+</div>
+<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+<div class="process-item glass-card">
+<h3>Development</h3>
+<p>Rapid, iterative building with production-grade documented code.</p>
+</div>
+</div>
+<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+<div class="process-item glass-card">
+<h3>Deployment</h3>
+<p>API deployment, LangSmith monitoring, and handover with full docs.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-            <!-- NEW: LangGraph Agent -->
-            <div class="col-lg-4 col-md-6 project-item isotope-item filter-genai-project filter-ai-project">
-              <a href="https://github.com/Mehmaam99/langgraph-ai-agent" target="_blank">
-                <div class="project-card">
-                  <div class="project-img"><img src="assets/img/project/thumbnail_AI_AGENT.png" alt="LangGraph AI Agent"
-                      class="img-fluid"></div>
-                  <div class="project-info">
-                    <h4>LangGraph AI Agent</h4>
-                    <p>Stateful AI agent with tool calling — Calculator, DateTime, Knowledge Base, and Text Analyzer.
-                      Conditional routing with LangSmith production monitoring.</p>
-                    <div class="project-tags"><span>LangGraph</span><span>LangSmith</span><span>Groq
-                        LLM</span><span>FastAPI</span></div>
-                    <div class="mt-2"><a href="https://youtu.be/ZKw46hZCG3M" target="_blank"
-                        onclick="event.stopPropagation()" style="font-size:13px;color:var(--accent-color);">&#9654;
-                        Watch Demo</a></div>
-                  </div>
-                </div>
-              </a>
-            </div>
+<!-- PROJECTS - updated with current public repos -->
+<section id="project" class="project section">
+<div class="container section-title" data-aos="fade-up">
+<h2>Projects</h2>
+<p>Production-ready AI systems with full source code, documentation, and live demo videos.</p>
+</div>
+<div class="container" data-aos="fade-up" data-aos-delay="100">
+<div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+<ul class="project-filters isotope-filters" data-aos="fade-up" data-aos-delay="200">
+<li data-filter="*" class="filter-active">All</li>
+<li data-filter=".filter-ai-project">AI Project</li>
+<li data-filter=".filter-genai-project">Gen AI Project</li>
+<li data-filter=".filter-cloud-project">Cloud Project</li>
+</ul>
 
-            <!-- NEW: YOLO Detection -->
-            <div class="col-lg-4 col-md-6 project-item isotope-item filter-ai-project">
-              <a href="https://github.com/Mehmaam99/yolo-object-detection-api" target="_blank">
-                <div class="project-card">
-                  <div class="project-img"><img src="assets/img/project/thumbnail_YOLO.png"
-                      alt="YOLO Object Detection API" class="img-fluid"></div>
-                  <div class="project-info">
-                    <h4>YOLO Object Detection API</h4>
-                    <p>Upload an image and detect all objects instantly. Returns bounding boxes, labels, and confidence
-                      scores — YOLOv8 + OpenCV + FastAPI.</p>
-                    <div class="project-tags">
-                      <span>YOLOv8</span><span>OpenCV</span><span>FastAPI</span><span>Python</span>
-                    </div>
-                    <div class="mt-2"><a href="https://youtu.be/XQrj2eV3bTA" target="_blank"
-                        onclick="event.stopPropagation()" style="font-size:13px;color:var(--accent-color);">&#9654;
-                        Watch Demo</a></div>
-                  </div>
-                </div>
-              </a>
-            </div>
+<div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
 
-            <!-- Existing: Blood Pressure -->
-            <div class="col-lg-4 col-md-6 project-item isotope-item filter-ai-project">
-              <a href="https://github.com/Mehmaam99/Blood-Pressure-Analyzer" target="_blank">
-                <div class="project-card">
-                  <div class="project-img"><img src="assets/img/project/blood-pressure.png"
-                      alt="Blood Pressure Analyzer" class="img-fluid"></div>
-                  <div class="project-info">
-                    <h4>Blood Pressure Analyzer</h4>
-                    <p>A predictive health analytics application utilizing machine learning algorithms to classify blood
-                      pressure conditions with high accuracy.</p>
-                    <div class="project-tags"><span>Machine Learning</span><span>Health AI</span><span>Predictive
-                        Analytics</span></div>
-                  </div>
-                </div>
-              </a>
-            </div>
+<!-- RAG Chatbot -->
+<div class="col-lg-4 col-md-6 project-item isotope-item filter-genai-project filter-ai-project">
+<a href="https://github.com/Mehmaam99/rag-document-chatbot" target="_blank">
+<div class="project-card">
+<div class="project-img"><img src="assets/img/project/thumbnail_RAG.png" alt="RAG Document Chatbot"
+class="img-fluid"></div>
+<div class="project-info">
+<h4>RAG Document Chatbot</h4>
+<p>Upload any PDF and chat with it instantly. Answers include source citations — built with
+LangChain, ChromaDB, and Groq LLM on a FastAPI backend.</p>
+<div class="project-tags"><span>LangChain</span><span>ChromaDB</span><span>Groq
+LLM</span><span>FastAPI</span></div>
+<div class="mt-2"><a href="https://youtu.be/SkITBQkZz28" target="_blank"
+onclick="event.stopPropagation()" style="font-size:13px;color:var(--accent-color);">&#9654;
+Watch Demo</a></div>
+</div>
+</div>
+</a>
+</div>
 
-            <!-- Existing: Azure Migration -->
-            <div class="col-lg-4 col-md-6 project-item isotope-item filter-cloud-project">
-              <a href="https://github.com/Mehmaam99/Azure-Data-Migration-Pipeline" target="_blank">
-                <div class="project-card">
-                  <div class="project-img"><img src="assets/img/project/azure-data-factory.png"
-                      alt="Azure Data Migration" class="img-fluid"></div>
-                  <div class="project-info">
-                    <h4>Azure Data Migration Pipeline</h4>
-                    <p>End-to-end solution migrating on-premises data to a modern cloud-based data warehouse on Azure.
-                    </p>
-                    <div class="project-tags"><span>Azure Cloud</span><span>Databricks</span><span>Data Factory</span>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
+<!-- LangGraph Agent -->
+<div class="col-lg-4 col-md-6 project-item isotope-item filter-genai-project filter-ai-project">
+<a href="https://github.com/Mehmaam99/langgraph-ai-agent" target="_blank">
+<div class="project-card">
+<div class="project-img"><img src="assets/img/project/thumbnail_AI_AGENT.png" alt="LangGraph AI Agent"
+class="img-fluid"></div>
+<div class="project-info">
+<h4>LangGraph AI Agent</h4>
+<p>Stateful AI agent with tool calling — Calculator, DateTime, Knowledge Base, and Text Analyzer.
+Conditional routing with LangSmith production monitoring.</p>
+<div class="project-tags"><span>LangGraph</span><span>LangSmith</span><span>Groq
+LLM</span><span>FastAPI</span></div>
+<div class="mt-2"><a href="https://youtu.be/ZKw46hZCG3M" target="_blank"
+onclick="event.stopPropagation()" style="font-size:13px;color:var(--accent-color);">&#9654;
+Watch Demo</a></div>
+</div>
+</div>
+</a>
+</div>
 
-            <!-- Existing: AI RAG Pipeline -->
-            <div class="col-lg-4 col-md-6 project-item isotope-item filter-genai-project filter-cloud-project">
-              <a href="https://github.com/Mehmaam99/Retrieval_Augmented_Generation_RAG_Data_Pipeline" target="_blank">
-                <div class="project-card">
-                  <div class="project-img"><img src="assets/img/project/AI_RAG_thumbnai_website.png"
-                      alt="AI RAG Data Pipeline" class="img-fluid"></div>
-                  <div class="project-info">
-                    <h4>AI RAG Data Pipeline</h4>
-                    <p>RAG-based pipeline ingesting video from AWS S3, performing speech-to-text transcription, and
-                      storing vector embeddings for retrieval.</p>
-                    <div class="project-tags"><span>Python</span><span>AWS</span><span>S3</span><span>RAG</span></div>
-                  </div>
-                </div>
-              </a>
-            </div>
+<!-- YOLO Detection -->
+<div class="col-lg-4 col-md-6 project-item isotope-item filter-ai-project">
+<a href="https://github.com/Mehmaam99/yolo-object-detection-api" target="_blank">
+<div class="project-card">
+<div class="project-img"><img src="assets/img/project/thumbnail_YOLO.png"
+alt="YOLO Object Detection API" class="img-fluid"></div>
+<div class="project-info">
+<h4>YOLO Object Detection API</h4>
+<p>Upload an image and detect all objects instantly. Returns bounding boxes, labels, and confidence
+scores — YOLOv8 + OpenCV + FastAPI.</p>
+<div class="project-tags">
+<span>YOLOv8</span><span>OpenCV</span><span>FastAPI</span><span>Python</span>
+</div>
+<div class="mt-2"><a href="https://youtu.be/XQrj2eV3bTA" target="_blank"
+onclick="event.stopPropagation()" style="font-size:13px;color:var(--accent-color);">&#9654;
+Watch Demo</a></div>
+</div>
+</div>
+</a>
+</div>
 
-          </div>
-        </div>
-      </div>
-    </section>
+<!-- Hospital Data Engineering Pipeline -->
+<div class="col-lg-4 col-md-6 project-item isotope-item filter-cloud-project">
+<a href="https://github.com/Mehmaam99/hospital-data-engineering-pipeline" target="_blank">
+<div class="project-card">
+<div class="project-img"><img src="assets/img/project/thumbnail_YOLO.png"
+alt="Hospital Data Engineering Pipeline" class="img-fluid"></div>
+<div class="project-info">
+<h4>Hospital Data Engineering Pipeline</h4>
+<p>ETL pipeline monitoring room occupancy, departmental revenue, and data quality validation for
+hospital systems.</p>
+<div class="project-tags"><span>TSQL</span><span>ETL</span><span>Data Quality</span></div>
+</div>
+</div>
+</a>
+</div>
 
-    <!-- SKILLS -->
-    <section id="skills" class="skills section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Skills</h2>
-        <p>Core strengths across LLM engineering, computer vision, and production AI systems.</p>
-      </div>
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row g-4 skills-animation">
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-            <div class="skill-box">
-              <h3>LLM &amp; RAG Engineer</h3>
-              <p class="mb-2">LangChain, ChromaDB, Groq, Sentence Transformers — building document chatbots with
-                source-cited answers.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-            <div class="skill-box">
-              <h3>LangGraph Agents</h3>
-              <p class="mb-2">Stateful agent graphs with conditional routing, tool calling, memory, and LangSmith
-                production monitoring.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-            <div class="skill-box">
-              <h3>Computer Vision</h3>
-              <p class="mb-2">YOLOv8, OpenCV, FastWhisper — real-time detection APIs and audio processing pipelines.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
-            <div class="skill-box">
-              <h3>Production APIs</h3>
-              <p class="mb-2">FastAPI, Python, Docker, AWS S3, Azure — deploying and monitoring AI systems at scale.</p>
-            </div>
-          </div>
-        </div>
-        <p class="mt-3">Also: PostgreSQL, Git, LangSmith, Hugging Face, Azure AI, AWS Bedrock, and data quality
-          frameworks.</p>
-      </div>
-    </section>
+<!-- WhatsApp E-commerce Chatbot -->
+<div class="col-lg-4 col-md-6 project-item isotope-item filter-genai-project filter-ai-project">
+<a href="https://github.com/Mehmaam99/whatsapp-chatbot-ecommerce" target="_blank">
+<div class="project-card">
+<div class="project-img"><img src="assets/img/project/thumbnail_RAG.png"
+alt="WhatsApp E-commerce Chatbot" class="img-fluid"></div>
+<div class="project-info">
+<h4>WhatsApp E-commerce Chatbot</h4>
+<p>LLM-powered chatbot for e-commerce sites — automates customer intent classification and
+response handling via WhatsApp API.</p>
+<div class="project-tags"><span>Python</span><span>LLM</span><span>WhatsApp API</span></div>
+</div>
+</div>
+</a>
+</div>
 
-    <!-- RESUME - updated link -->
-    <section id="resume" class="resume section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Resume</h2>
-        <p>View my resume or download the PDF.</p>
-      </div>
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="justify-content-center d-flex flex-wrap gap-3">
-          <a href="https://flowcv.com/resume/ok5firnp360q" target="_blank"
-            rel="noopener" class="btn btn-primary"><i class="bi bi-box-arrow-up-right me-1"></i> View Resume</a>
-          <a href="https://flowcv.com/resume/ok5firnp360q" target="_blank"
-            rel="noopener" class="btn btn-success"><i class="bi bi-download me-1"></i> Download PDF</a>
-        </div>
-      </div>
-    </section>
+<!-- SQL Data Warehouse Project -->
+<div class="col-lg-4 col-md-6 project-item isotope-item filter-cloud-project">
+<a href="https://github.com/Mehmaam99/sql-data-warehouse-project" target="_blank">
+<div class="project-card">
+<div class="project-img"><img src="assets/img/project/azure-data-factory.png"
+alt="SQL Data Warehouse Project" class="img-fluid"></div>
+<div class="project-info">
+<h4>SQL Data Warehouse Project</h4>
+<p>Modern data warehouse built with SQL Server — ETL process, data modeling, and analytics.</p>
+<div class="project-tags"><span>SQL Server</span><span>ETL</span><span>Data Modeling</span></div>
+</div>
+</div>
+</a>
+</div>
 
-    <!-- WHY HIRE ME -->
-    <section id="why-hire" class="why-hire section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Why Work With Me?</h2>
-        <p>Production experience — not just tutorials and demos.</p>
-      </div>
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="authority-item glass-card shimmer-border">
-              <div class="authority-badge"><i class="bi bi-check2-circle"></i> Proven</div>
-              <div class="icon-container"><i class="bi bi-shield-lock-fill"></i></div>
-              <h3>Production Experience</h3>
-              <p>I've shipped AI systems processing 500+ sessions/month in healthcare — real production systems with
-                real users, not side projects.</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="authority-item glass-card shimmer-border">
-              <div class="authority-badge"><i class="bi bi-lightning-fill"></i> Fast</div>
-              <div class="icon-container"><i class="bi bi-node-plus-fill"></i></div>
-              <h3>Agentic Intelligence</h3>
-              <p>I build LangGraph agents that reason, call tools, and complete multi-step tasks — with LangSmith
-                observability to track every run in production.</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="authority-item glass-card shimmer-border">
-              <div class="authority-badge"><i class="bi bi-hdd-network-fill"></i> Clean</div>
-              <div class="icon-container"><i class="bi bi-cloud-check-fill"></i></div>
-              <h3>Documented Code</h3>
-              <p>Every project comes with full source code, setup instructions, and documentation — so your team can
-                maintain and extend it independently.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+</div>
+</div>
+</div>
+</section>
 
-    <!-- CONTACT - updated email -->
-    <section id="contact" class="contact section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Let's build with AI</h2>
-        <p>Need a RAG chatbot, LangGraph agent, or Computer Vision API? Share your use case and I'll get back within
-          24–48 hours.</p>
-      </div>
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-12 col-lg-6">
-            <div class="info-box glass-card shimmer-border" style="color:#ffffff;">
-              <h3 style="color:#ffffff;">Contact Info</h3>
-              <p style="color:#ffffff;">For any inquiries, please contact me via email.</p>
-              <div class="mt-4">
-                <h4 style="color:#ffffff;font-weight:700;font-size:1.1rem;margin-bottom:5px;">Project Inquiries</h4>
-                <p style="color:#ffffff;margin-bottom:5px;">For engagements, collaborations, and consulting.</p>
-                <p class="email-pop" style="margin-bottom:15px;"><a href="mailto:muhammadmehmaam@gmail.com"
-                    style="color:#00e5ff;font-weight:bold;">muhammadmehmaam@gmail.com</a></p>
-                <h4 style="color:#ffffff;font-weight:700;font-size:1.1rem;margin-bottom:5px;">Preferred Contact</h4>
-                <p style="color:#ffffff;margin-bottom:5px;">Email is best for initial scoping or use LinkedIn.</p>
-                <p style="color:#ffffff;margin-bottom:15px;">Happy to schedule a call after your message.</p>
-                <h4 style="color:#ffffff;font-weight:700;font-size:1.1rem;margin-bottom:5px;">Location &amp;
-                  Availability</h4>
-                <p style="color:#ffffff;margin-bottom:5px;">Remote — Worldwide</p>
-                <p style="color:#ffffff;opacity:0.8;font-size:0.9rem;">Replies within 12–24 hours (business days)</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<!-- SKILLS -->
+<section id="skills" class="skills section">
+<div class="container section-title" data-aos="fade-up">
+<h2>Skills</h2>
+<p>Core strengths across LLM engineering, computer vision, and production AI systems.</p>
+</div>
+<div class="container" data-aos="fade-up" data-aos-delay="100">
+<div class="row g-4 skills-animation">
+<div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+<div class="skill-box">
+<h3>LLM &amp; RAG Engineer</h3>
+<p class="mb-2">LangChain, ChromaDB, Groq, Sentence Transformers — building document chatbots with
+source-cited answers.</p>
+</div>
+</div>
+<div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+<div class="skill-box">
+<h3>LangGraph Agents</h3>
+<p class="mb-2">Stateful agent graphs with conditional routing, tool calling, memory, and LangSmith
+production monitoring.</p>
+</div>
+</div>
+<div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+<div class="skill-box">
+<h3>Computer Vision</h3>
+<p class="mb-2">YOLOv8, OpenCV, FastWhisper — real-time detection APIs and audio processing pipelines.</p>
+</div>
+</div>
+<div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+<div class="skill-box">
+<h3>Production APIs</h3>
+<p class="mb-2">FastAPI, Python, Docker, AWS S3, Azure — deploying and monitoring AI systems at scale.</p>
+</div>
+</div>
+</div>
+<p class="mt-3">Also: PostgreSQL, Git, LangSmith, Hugging Face, Azure AI, AWS Bedrock, and data quality
+frameworks.</p>
+</div>
+</section>
 
-  </main>
+<!-- RESUME -->
+<section id="resume" class="resume section">
+<div class="container section-title" data-aos="fade-up">
+<h2>Resume</h2>
+<p>View my resume or download the PDF.</p>
+</div>
+<div class="container" data-aos="fade-up" data-aos-delay="100">
+<div class="justify-content-center d-flex flex-wrap gap-3">
+<a href="https://flowcv.com/resume/ok5firnp360q" target="_blank"
+rel="noopener" class="btn btn-primary"><i class="bi bi-box-arrow-up-right me-1"></i> View Resume</a>
+<a href="https://flowcv.com/resume/ok5firnp360q" target="_blank"
+rel="noopener" class="btn btn-success"><i class="bi bi-download me-1"></i> Download PDF</a>
+</div>
+</div>
+</section>
 
-  <footer id="footer" class="footer">
-    <div class="container">
-      <div class="copyright text-center">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">Portfolio</strong> <span>All Rights Reserved</span>
-        </p>
-      </div>
-      <div class="social-links d-flex justify-content-center gap-3 align-items-center">
-        <a href="https://github.com/Mehmaam99" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
-        <a href="https://www.linkedin.com/in/muhammad-mehmam/" target="_blank" rel="noopener"><i
-            class="bi bi-linkedin"></i></a>
-        <a href="https://www.instagram.com/mehmam.ai" target="_blank" rel="noopener"><i class="bi bi-instagram"></i></a>
-        <a href="https://www.upwork.com/freelancers/muhammadmehmam" target="_blank" rel="noopener"
-          style="font-size:13px;font-weight:700;text-decoration:none;color:inherit;">Upwork</a>
-        <a href="https://www.fiverr.com/mehmam_ai" target="_blank" rel="noopener"
-          style="font-size:13px;font-weight:700;text-decoration:none;color:inherit;">Fiverr</a>
-      </div>
-      <div class="credits">Designed by <a href="">Syed Muhammad Mehmam</a></div>
-    </div>
-  </footer>
+<!-- WHY HIRE ME -->
+<section id="why-hire" class="why-hire section">
+<div class="container section-title" data-aos="fade-up">
+<h2>Why Work With Me?</h2>
+<p>Production experience — not just tutorials and demos.</p>
+</div>
+<div class="container">
+<div class="row gy-4">
+<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+<div class="authority-item glass-card shimmer-border">
+<div class="authority-badge"><i class="bi bi-check2-circle"></i> Proven</div>
+<div class="icon-container"><i class="bi bi-shield-lock-fill"></i></div>
+<h3>Production Experience</h3>
+<p>I've shipped AI systems processing 500+ sessions/month in healthcare — real production systems with
+real users, not side projects.</p>
+</div>
+</div>
+<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+<div class="authority-item glass-card shimmer-border">
+<div class="authority-badge"><i class="bi bi-lightning-fill"></i> Fast</div>
+<div class="icon-container"><i class="bi bi-node-plus-fill"></i></div>
+<h3>Agentic Intelligence</h3>
+<p>I build LangGraph agents that reason, call tools, and complete multi-step tasks — with LangSmith
+observability to track every run in production.</p>
+</div>
+</div>
+<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+<div class="authority-item glass-card shimmer-border">
+<div class="authority-badge"><i class="bi bi-hdd-network-fill"></i> Clean</div>
+<div class="icon-container"><i class="bi bi-cloud-check-fill"></i></div>
+<h3>Documented Code</h3>
+<p>Every project comes with full source code, setup instructions, and documentation — so your team can
+maintain and extend it independently.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
-  <div id="preloader"></div>
+<!-- CONTACT -->
+<section id="contact" class="contact section">
+<div class="container section-title" data-aos="fade-up">
+<h2>Let's build with AI</h2>
+<p>Need a RAG chatbot, LangGraph agent, or Computer Vision API? Share your use case and I'll get back within
+24–48 hours.</p>
+</div>
+<div class="container" data-aos="fade-up" data-aos-delay="100">
+<div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+<div class="col-12 col-lg-6">
+<div class="info-box glass-card shimmer-border" style="color:#ffffff;">
+<h3 style="color:#ffffff;">Contact Info</h3>
+<p style="color:#ffffff;">For any inquiries, please contact me via email.</p>
+<div class="mt-4">
+<h4 style="color:#ffffff;font-weight:700;font-size:1.1rem;margin-bottom:5px;">Project Inquiries</h4>
+<p style="color:#ffffff;margin-bottom:5px;">For engagements, collaborations, and consulting.</p>
+<p class="email-pop" style="margin-bottom:15px;"><a href="mailto:muhammadmehmaam@gmail.com"
+style="color:#00e5ff;font-weight:bold;">muhammadmehmaam@gmail.com</a></p>
+<h4 style="color:#ffffff;font-weight:700;font-size:1.1rem;margin-bottom:5px;">Preferred Contact</h4>
+<p style="color:#ffffff;margin-bottom:5px;">Email is best for initial scoping or use LinkedIn.</p>
+<p style="color:#ffffff;margin-bottom:15px;">Happy to schedule a call after your message.</p>
+<h4 style="color:#ffffff;font-weight:700;font-size:1.1rem;margin-bottom:5px;">Location &amp;
+Availability</h4>
+<p style="color:#ffffff;margin-bottom:5px;">Remote — Worldwide</p>
+<p style="color:#ffffff;opacity:0.8;font-size:0.9rem;">Replies within 12–24 hours (business days)</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/js/main.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
-  <script src="widget.js?v=6"></script>
+</main>
+
+<footer id="footer" class="footer">
+<div class="container">
+<div class="copyright text-center">
+<p>© <span>Copyright</span> <strong class="px-1 sitename">Portfolio</strong> <span>All Rights Reserved</span>
+</p>
+</div>
+<div class="social-links d-flex justify-content-center gap-3 align-items-center">
+<a href="https://github.com/Mehmaam99" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
+<a href="https://www.linkedin.com/in/muhammad-mehmam/" target="_blank" rel="noopener"><i
+class="bi bi-linkedin"></i></a>
+<a href="https://www.instagram.com/mehmam.ai" target="_blank" rel="noopener"><i class="bi bi-instagram"></i></a>
+<a href="https://www.upwork.com/freelancers/muhammadmehmam" target="_blank" rel="noopener"
+style="font-size:13px;font-weight:700;text-decoration:none;color:inherit;">Upwork</a>
+<a href="https://www.fiverr.com/mehmam_ai" target="_blank" rel="noopener"
+style="font-size:13px;font-weight:700;text-decoration:none;color:inherit;">Fiverr</a>
+</div>
+<div class="credits">Designed by <a href="">Syed Muhammad Mehmam</a></div>
+</div>
+</footer>
+
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+class="bi bi-arrow-up-short"></i></a>
+
+<div id="preloader"></div>
+
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/typed.js/typed.umd.js"></script>
+<script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/js/main.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
+<script src="widget.js?v=6"></script>
 
 </body>
 
