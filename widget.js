@@ -19,7 +19,6 @@
             z-index: 10000;
         }
 
-        /* Custom Scrollbar */
         .orbit-chat-messages::-webkit-scrollbar {
             width: 6px;
         }
@@ -72,6 +71,52 @@
             transform-origin: bottom right;
             transform: scale(0.9) translateY(20px);
             opacity: 0;
+            max-width: calc(100vw - 40px);
+            max-height: calc(100vh - 110px);
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 480px) {
+            .orbit-chat-widget-container {
+                bottom: 15px;
+                right: 15px;
+            }
+
+            .orbit-chat-button {
+                width: 56px;
+                height: 56px;
+                font-size: 22px;
+            }
+
+            .orbit-chat-window {
+                position: fixed;
+                top: 10px;
+                left: 10px;
+                right: 10px;
+                bottom: 10px;
+                width: auto;
+                height: auto;
+                max-width: none;
+                max-height: none;
+                border-radius: 18px;
+            }
+
+            .orbit-chat-header {
+                padding: 16px 18px;
+            }
+
+            .orbit-chat-messages {
+                padding: 16px;
+            }
+
+            .orbit-message {
+                max-width: 85%;
+                font-size: 14px;
+            }
+
+            .orbit-chat-input-area {
+                padding: 14px 16px;
+            }
         }
 
         .orbit-chat-window.open {
@@ -150,11 +195,10 @@
             font-weight: 500;
         }
 
-        /* PREMIUM MARKDOWN STYLING */
         .orbit-message p { margin: 10px 0; }
         .orbit-message p:first-child { margin-top: 0; }
         .orbit-message p:last-child { margin-bottom: 0; }
-        
+
         .orbit-message h1, .orbit-message h2, .orbit-message h3 {
             margin: 16px 0 8px 0;
             color: #0f172a;
@@ -330,7 +374,6 @@
         windowEl.classList.remove('open');
     };
 
-    // ✅ FIXED MESSAGE RENDERING
     function addMessage(text, sender) {
         const div = document.createElement('div');
         div.className = `orbit-message ${sender}`;
@@ -338,7 +381,6 @@
         if (sender === 'bot') {
             if (typeof marked !== 'undefined') {
                 const rawHtml = marked.parse(text);
-                // Security: Sanitize HTML to prevent XSS
                 div.innerHTML = typeof DOMPurify !== 'undefined'
                     ? DOMPurify.sanitize(rawHtml)
                     : rawHtml;
@@ -371,7 +413,6 @@
         if (typing) typing.remove();
     }
 
-    // ANTI-SPAM: Cooldown logic
     let isCooldown = false;
 
     async function sendMessage() {
@@ -379,7 +420,6 @@
         const text = inputEl.value.trim();
         if (!text) return;
 
-        // Security: Limit input length on frontend
         if (text.length > 500) {
             alert("Message is too long. Please shorten it.");
             return;
@@ -413,7 +453,6 @@
             sendBtn.disabled = false;
             inputEl.focus();
 
-            // Set 2s cooldown to prevent spam
             setTimeout(() => { isCooldown = false; }, 2000);
         }
     }
